@@ -32,4 +32,4 @@ router.delete('/api/notes/:id', (req, res) => {
     res.json('deleteNotes');
 });
 
-module.exporty = router;
+module.exports = router;
