@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Note Taker",
+        "text": "An appplication to add and delete personal notes",
+        "id": "0"
+    },
+    {
+        "title": "Delete a Note",
+        "text": "A way to delete old notes from your list",
+        "id": "1"
+    }
+]

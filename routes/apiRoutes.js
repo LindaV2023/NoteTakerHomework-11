@@ -1,13 +1,20 @@
 const router = require('express').Router();
+const { response } = require('express');
 const fs = require('fs');
 const path = require('path');
+const util = require('util');
+const readFromFile = util.promisify(fs.readFile);
 
-router.get('/api/notes', (req, res) =>{
-    res.sendFile(path.join(__dirname, '../db/db.json'));
+
+router.get('/notes',async (req, res) =>{
+    let notes=await readFromFile ("./db/db.json")
+    let parsedNotes=JSON.parse(notes)
+    res.json(parsedNotes)
+
 
 });
 
-router.post('/api/notes',  (req, res) => {
+router.post('/notes',  (req, res) => {
     const db = fs.readFileSync('db/db.json');
     db = JSON.parse(db);
     res.json(db);
